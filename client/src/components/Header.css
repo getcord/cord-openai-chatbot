@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px;
+}
+
+header img {
+  height: 48px;
+  object-fit: contain;
+}
+
+cord-presence-facepile {
+  display: inline-block;
+  margin-left: auto;
+}
+
+cord-presence-facepile .cord-facepile {
+  height: 48px;
+}
+cord-presence-facepile .cord-avatar-container {
+  height: inherit;
+  width: 48px;
+}
+
+cord-presence-facepile .cord-avatar-fallback {
+  font-size: 24px;
+}
