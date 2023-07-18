@@ -36,39 +36,41 @@ export default async function CordWebhookEventsHandler(
 
   verifySignature(req);
 
-  if (req.body.messageID.endsWith('-bot')) {
+  const { message, thread } = req.body.event;
+
+  if (message.id.endsWith('-bot')) {
     console.log('Ignoring the message from the bot');
     return;
   }
 
-  const clearBotTypingInterval = await showBotIsTyping(req.body.thread.id);
+  const clearBotTypingInterval = await showBotIsTyping(thread.id);
 
   const clearBotPresence = await showBotIsPresent(
     BOT_PRESENCE_LOCATION,
-    req.body.organizationID,
+    thread.organizationID,
   );
 
-  const plainText = convertCordMessageToPlainText(req.body.content);
+  const plainText = convertCordMessageToPlainText(message.content);
 
-  if (!(req.body.thread.id in conversationCache)) {
-    initializeConversationWithPrompt(req.body.thread.id);
+  if (!(thread.id in conversationCache)) {
+    initializeConversationWithPrompt(thread.id);
   }
 
-  appendToConversationCache(req.body.thread.id, USER_NAME, plainText);
+  appendToConversationCache(thread.id, USER_NAME, plainText);
 
   const botResponse = await getChatBotResponse(
-    req.body.thread.id,
+    thread.id,
     plainText,
-    conversationCache[req.body.thread.id],
+    conversationCache[thread.id],
   );
 
   await clearBotTypingInterval();
 
-  appendToConversationCache(req.body.thread.id, BOT_USER_NAME, botResponse);
+  appendToConversationCache(thread.id, BOT_USER_NAME, botResponse);
 
   await sendMessageToCord({
     userID: BOT_USER_ID,
-    threadID: req.body.thread.id,
+    threadID: thread.id,
     messageContent: [generateCordParagraph(botResponse)],
   });
 
