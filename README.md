@@ -45,7 +45,7 @@ Server side the following is used:
 
 # Local set up
 
-1. Clone this repo
+1. Clone this repo and `cd` into cord-openai-chatbot
 
 ## Set up local server
 
