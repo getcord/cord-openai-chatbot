@@ -57,7 +57,12 @@ After cloning the repo, in your Terminal:
 
 4. Run `npm run generate-dot-env` to generate `.env` template.
 
-5. Enter missing information in `.env`. This includes your **openAI credentials**. You can find them [here](https://platform.openai.com/account/api-keys) or sign up to get them, and an **email address** we will store for the user who is taking to the chat bot (you will received notifications).
+5. Enter missing information in `.env`.\
+   **Cord credentais**\
+   You can find them [here](https://console.cord.com/) or [sign up](https://console.cord.com/signup) to get them.\
+   \
+   **openAI credentials**\
+   You can find them [here](https://platform.openai.com/account/api-keys) or sign up to get them, and an **email address** we will store for the user who is taking to the chat bot (you will received notifications).
 
 6. Run `npm run dev` and your server should be started!
 
