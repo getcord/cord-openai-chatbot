@@ -82,7 +82,7 @@ After cloning the repo, in your Terminal:
 9. Create a `.env` in the client folder and add the below into the newly created `.env` file.
 
    ```
-   // This is the address of your local server
+   # This is the address of your local server
    VITE_APP_SERVER_HOST='http://localhost:4000'
    ```
 
