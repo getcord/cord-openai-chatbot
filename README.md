@@ -123,7 +123,7 @@ You'll need to change files in `server/botKnowledge`.
 
 ---
 
-# Example
+# Examples
 
 ## Pokedex
 
