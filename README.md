@@ -104,14 +104,15 @@ VITE_APP_SERVER_HOST='http://localhost:4000'
 
 # How to configure the bot
 
+You can create your own support bot by following the steps below:s
+
 You'll need to change files in `server/botKnowledge`.
 
 ## Feeding knowledge
 
 1. In `server/botKnowledge/urls.txt` list all the urls you want the bot to know about.
 
-2. In your terminal run `npm run generate-embeddings` this will take the list of
-   urls and make a get request to extract all the text on that page.
+2. In your terminal run `npm run generate-embeddings` this will take the list of urls and make a get request to extract all the text on that page.
 3. In `server/botKnowledge/prompt.txt` you can describe what you require from the bot's response. The `BOT_USER_NAME`, `BOT_ESCAPE_WORD` and `BOT_CONTEXT` are variables that are replaced when the prompt is sent to openAI.
 
 ## Change bot appearance
@@ -122,9 +123,11 @@ You'll need to change files in `server/botKnowledge`.
 
 ---
 
-# Examples
+# Example
 
 ## Pokedex
+
+This takes the first 150 pokemon urls and feeds information to the Cord bot.
 
 1. Replace contents in `server/botKnowledge/urls.txt` with the below:
       <details>
