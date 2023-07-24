@@ -36,6 +36,18 @@ export default async function CordWebhookEventsHandler(
 
   verifySignature(req);
 
+  const type = req.body.type;
+
+  if (!type) {
+    console.log('No type found, ignoring');
+    return;
+  }
+
+  if (type !== 'thread-message-added') {
+    console.log('Event is not thread-message-added type');
+    return;
+  }
+
   const { message, thread } = req.body.event;
 
   if (message.id.endsWith('-bot')) {

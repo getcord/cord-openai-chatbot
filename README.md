@@ -65,10 +65,10 @@ After cloning the repo, in your Terminal:
     You can find them [here](https://platform.openai.com/account/api-keys) or sign up to get them.\
    \
     **email address**\
-    We will store for the user who is taking to the chat bot (you will received notifications).
+    The email address associated to the user who is talking to the chat bot (you will received notifications).
 
 6. Specifying the Cord webhook endpoint\
-   The (webhook)[https://docs.cord.com/reference/events-webhook] allows you to receive events from Cord, the types of events you can see can be calibrated in the (Cord Console)[https://console.cord.com]
+   The [webhook](https://docs.cord.com/reference/events-webhook) allows you to receive events from Cord, the types of events you can see can be calibrated in the [Cord Console](https://console.cord.com)
 
 - If you are running this locally, you will need to open up access to your localhost by using [ngrok](https://ngrok.com) or something similar.
 - Using [ngrok](https://ngrok.com), sign up and follow the instructions to install ` ngrok`. \
