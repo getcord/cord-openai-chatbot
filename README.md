@@ -69,7 +69,7 @@ After cloning the repo, in your Terminal:
     You can find them [here](https://platform.openai.com/account/api-keys) or sign up to get them.\
    \
     **email address**\
-    The email address associated to the user who is talking to the chat bot (you will received notifications).
+    The email address associated to the user who is talking to the chat bot (you will receive notifications).
 
 6. Run `npm run dev` and your server should be started!
 
@@ -114,7 +114,7 @@ VITE_APP_SERVER_HOST='http://localhost:4000'
 
 14. Run `npm run dev` and your local client should be set up! Check using the url given in your terminal.
 
-15. You should see the chat load up and a second later the AI bot send it's first message to you.
+15. You should see the chat load up and a second later the AI bot will send its first message to you.
 
 ---
 
