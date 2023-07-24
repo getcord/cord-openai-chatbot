@@ -75,33 +75,42 @@ After cloning the repo, in your Terminal:
 
 The [webhook](https://docs.cord.com/reference/events-webhook) allows you to receive events from Cord, the types of events you can see can be calibrated in the [Cord Console](https://console.cord.com).
 
-7. Make sure your local server is running by following the instructions above.
+7. If you are running this locally, you will need to open up access to your localhost by using [ngrok](https://ngrok.com) or something similar.
 
-- If you are running this locally, you will need to open up access to your localhost by using [ngrok](https://ngrok.com) or something similar.
-- Using [ngrok](https://ngrok.com), sign up and follow the instructions to install ` ngrok`. \
-  Then run in your terminal `ngrok http http://localhost:4000` making sure you insert what is specified in the hostname and port in your `.env`.
-- You will then get a web url (e.g `https://xxxx-217-213-73-197.ngrok-free.app`) that forwards any traffic to your localhost.
-- Log into the (Cord Console)[https://console.cord.com] and select the application you will use, then navigate to app settings, and then to the events tab and enter the webhook url (e.g `https://xxxx-217-213-73-197.ngrok-free.app/cord-webhook` from the step above).
-- You can change the path `/cord-webhook` to anything you want in the `.env` under `CORD_WEBHOOK_PATH`. Make sure you restart your server if you do.
+8. Using [ngrok](https://ngrok.com), sign up and follow the instructions to install `ngrok`. \
+    Then run in your terminal `ngrok http http://localhost:4000` making sure you insert what is specified in the hostname and port in your `.env`.\
+   You will then get a web url (e.g `https://xxxx-217-213-73-197.ngrok-free.app`) that forwards any traffic to your localhost.
+
+   ```
+   💡 Make sure your local server is turned at this point, when you insert the URL in the console, we will send a reuest to that URL and expect a status 200 back.
+   ```
+
+9. Log into the [Cord Console](https://console.cord.com) and select the application you will use, then navigate to app settings, and then to the events tab and enter the webhook url (e.g `https://xxxx-217-213-73-197.ngrok-free.app/cord-webhook` from the step above).
+
+   ```
+   💡 Make sure your webhook url also includes the CORD_WEBHOOK_PATH value.
+   ```
+
+10. You can change the path `/cord-webhook` to anything you want in the `.env` under `CORD_WEBHOOK_PATH`. Make sure you restart your server if you do.
 
 ## Set up local client
 
 After cloning the repo, in your Terminal:
 
-8. `cd` into the client folder.
+11. `cd` into the client folder.
 
-9. Run `npm install`.
+12. Run `npm install`.
 
-10. Create a `.env` in the client folder and add the below into the newly created `.env` file.
+13. Create a `.env` in the client folder and add the below into the newly created `.env` file.
 
 ```
 # This is the address of your local server
 VITE_APP_SERVER_HOST='http://localhost:4000'
 ```
 
-11. Run `npm run dev` and your local client should be set up! Check using the url given in your terminal.
+14. Run `npm run dev` and your local client should be set up! Check using the url given in your terminal.
 
-12. You should see the chat load up and a second later the AI bot send it's first message to you.
+15. You should see the chat load up and a second later the AI bot send it's first message to you.
 
 ---
 
