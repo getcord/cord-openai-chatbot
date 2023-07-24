@@ -36,10 +36,10 @@ checkEnvVars()
     // Returns the clientAuthToken to set this on the Cord provider on the client side
     app.post('/initialize-chatbot', InitializeCordChatbotHandler);
 
+    // The bot will send the first message to the user if there are no messages.
     app.post('/send-first-message', SendFirstMessageHandler);
 
-    // Generic route for samples applications, this can be changed via the
-    // console.cord.com for non-sample applications
+    // All the cord web events get sent to here
     app.post('/cord-webhook', CordWebhookEventsHandler);
 
     app.listen(PORT, () => {

@@ -5,7 +5,7 @@ import { join } from 'path';
 export const defaultEnvValues = {
   HOST: 'http://localhost',
   PORT: 4000,
-  CORD_SERVER: 'https://api.cord.com:8161',
+  CORD_SERVER: 'https://api.cord.com',
   CORD_APPLICATION_ID: '<INSERT A CORD APPLICATION ID>',
   CORD_API_SECRET:
     '<INSERT THE CORD API SECRET ASSOCIATED WITH APPLICATION ID>',

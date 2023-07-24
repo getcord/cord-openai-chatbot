@@ -32,9 +32,9 @@ OpenAI then does some magic, and Jackson should fill this out really.
 
 The client interface is using Cord's SDK to simulate a chatbot. The components from the SDK used are:
 
-- [Thread](https://local.cord.com:8191/components/cord-thread)
-- [Presence Observer](https://local.cord.com:8191/components/cord-presence-observer)
-- [Presence Facepile](https://local.cord.com:8191/components/cord-presence-facepile)
+- [Thread](https://docs.cord.com/components/cord-thread)
+- [Presence Observer](https://docs.cord.com/components/cord-presence-observer)
+- [Presence Facepile](https://docs.cord.com/components/cord-presence-facepile)
 
 Server side the following is used:
 
@@ -67,7 +67,17 @@ After cloning the repo, in your Terminal:
    **email address**\
    We will store for the user who is taking to the chat bot (you will received notifications).
 
-6. Run `npm run dev` and your server should be started!
+6. Specifying the Cord webhook endpoint\
+   The (webhook)[https://docs.cord.com/reference/events-webhook] allows you to receive events from Cord, the types of events you can see can be calibrated in the (Cord Console)[https://console.cord.com]
+
+- If you are running this locally, you will need to open up access to your localhost by using [ngrok](https://ngrok.com) or something similar.
+- Using [ngrok](https://ngrok.com), sign up and follow the instructions to install ` ngrok`. \
+  Then run in your terminal `ngrok http http://localhost:4000` making sure you insert what is specified in the hostname and port in your `.env`.
+- You will then get a web url (e.g `https://xxxx-217-213-73-197.ngrok-free.app`) that forwards any traffic to your localhost.
+- Log into the (Cord Console)[https://console.cord.com] and select the application you will use, then navigate to app settings, and then to the events tab and enter the webhook url (e.g `https://xxxx-217-213-73-197.ngrok-free.app/cord-webhook` from the step above).
+  You can change the path `cord-webhook` to anything you want, you must also remember to change it in the `server.ts` file.
+
+7. Run `npm run dev` and your server should be started!
 
 > _Note_ Any changes you make to the server code will only be reflected if you restart your server.
 
@@ -75,18 +85,20 @@ After cloning the repo, in your Terminal:
 
 After cloning the repo, in your Terminal:
 
-7. `cd` into the client folder.
+8. `cd` into the client folder.
 
-8. Run `npm install`.
+9. Run `npm install`.
 
-9. Create a `.env` in the client folder and add the below into the newly created `.env` file.
+10. Create a `.env` in the client folder and add the below into the newly created `.env` file.
 
-   ```
-   # This is the address of your local server
-   VITE_APP_SERVER_HOST='http://localhost:4000'
-   ```
+```
+# This is the address of your local server
+VITE_APP_SERVER_HOST='http://localhost:4000'
+```
 
-10. Run `npm run dev` and your local client should be set up! Check using the url given in your terminal.
+11. Run `npm run dev` and your local client should be set up! Check using the url given in your terminal.
+
+12. You should see the chat load up and a second later the AI bot send it's first message to you.
 
 ---
 
