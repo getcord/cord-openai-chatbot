@@ -55,6 +55,10 @@ After cloning the repo, in your Terminal:
 
 3. Run `npm install`.
 
+   ```
+   💡 Make sure you run npm install within the server folder
+   ```
+
 4. Run `npm run generate-dot-env` to generate `.env` template.
 
 5. Enter missing information in `.env`.\
