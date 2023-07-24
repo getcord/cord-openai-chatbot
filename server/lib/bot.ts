@@ -1,7 +1,7 @@
 import { setUserPresence, updateTypingIndicator } from './cord';
 
 // Customise these
-export const BOT_USER_NAME = 'Pokedex';
+export const BOT_USER_NAME = 'Cordy';
 export const BOT_USER_ID = 'Cord-Blimey-2';
 export const BOT_SAFE_WORD = "Well, you've got me stumped!";
 export const BOT_FIRST_MESSAGE = `Hi! I'm ${BOT_USER_NAME}. How may I help?`;
