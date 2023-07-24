@@ -67,19 +67,22 @@ After cloning the repo, in your Terminal:
     **email address**\
     The email address associated to the user who is talking to the chat bot (you will received notifications).
 
-6. Specifying the Cord webhook endpoint\
-   The [webhook](https://docs.cord.com/reference/events-webhook) allows you to receive events from Cord, the types of events you can see can be calibrated in the [Cord Console](https://console.cord.com)
+6. Run `npm run dev` and your server should be started!
+
+> _Note_ Any changes you make to the server code will only be reflected if you restart your server.
+
+**Specifying the Cord webhook endpoint**
+
+The [webhook](https://docs.cord.com/reference/events-webhook) allows you to receive events from Cord, the types of events you can see can be calibrated in the [Cord Console](https://console.cord.com).
+
+7. Make sure your local server is running by following the instructions above.
 
 - If you are running this locally, you will need to open up access to your localhost by using [ngrok](https://ngrok.com) or something similar.
 - Using [ngrok](https://ngrok.com), sign up and follow the instructions to install ` ngrok`. \
   Then run in your terminal `ngrok http http://localhost:4000` making sure you insert what is specified in the hostname and port in your `.env`.
 - You will then get a web url (e.g `https://xxxx-217-213-73-197.ngrok-free.app`) that forwards any traffic to your localhost.
 - Log into the (Cord Console)[https://console.cord.com] and select the application you will use, then navigate to app settings, and then to the events tab and enter the webhook url (e.g `https://xxxx-217-213-73-197.ngrok-free.app/cord-webhook` from the step above).
-  You can change the path `cord-webhook` to anything you want, you must also remember to change it in the `server.ts` file.
-
-7. Run `npm run dev` and your server should be started!
-
-> _Note_ Any changes you make to the server code will only be reflected if you restart your server.
+- You can change the path `/cord-webhook` to anything you want in the `.env` under `CORD_WEBHOOK_PATH`. Make sure you restart your server if you do.
 
 ## Set up local client
 

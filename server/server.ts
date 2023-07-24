@@ -40,7 +40,7 @@ checkEnvVars()
     app.post('/send-first-message', SendFirstMessageHandler);
 
     // All the cord web events get sent to here
-    app.post('/cord-webhook', CordWebhookEventsHandler);
+    app.post(CORD_WEBHOOK_PATH, CordWebhookEventsHandler);
 
     app.listen(PORT, () => {
       console.log(

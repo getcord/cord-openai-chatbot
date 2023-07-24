@@ -36,6 +36,7 @@ export default async function CordWebhookEventsHandler(
 
   verifySignature(req);
 
+  // For all types refer to https://docs.cord.com/reference/events-webhook
   const type = req.body.type;
 
   if (!type) {
