@@ -58,14 +58,14 @@ After cloning the repo, in your Terminal:
 4. Run `npm run generate-dot-env` to generate `.env` template.
 
 5. Enter missing information in `.env`.\
-   **Cord credentais**\
-   You can find them [here](https://console.cord.com/) or [sign up](https://console.cord.com/signup) to get them.\
+    **Cord credentais**\
+    You can find them [here](https://console.cord.com/) or [sign up](https://console.cord.com/signup) to get them.\
+    \
+    **openAI credentials**\
+    You can find them [here](https://platform.openai.com/account/api-keys) or sign up to get them.\
    \
-   **openAI credentials**\
-   You can find them [here](https://platform.openai.com/account/api-keys) or sign up to get them.\
-
-   **email address**\
-   We will store for the user who is taking to the chat bot (you will received notifications).
+    **email address**\
+    We will store for the user who is taking to the chat bot (you will received notifications).
 
 6. Specifying the Cord webhook endpoint\
    The (webhook)[https://docs.cord.com/reference/events-webhook] allows you to receive events from Cord, the types of events you can see can be calibrated in the (Cord Console)[https://console.cord.com]
