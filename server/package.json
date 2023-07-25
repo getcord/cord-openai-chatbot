@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "dev": "tsc && NODE_TLS_REJECT_UNAUTHORIZED=0 node build/server.js",
+    "dev": "tsc && node build/server.js",
     "start": "tsc && node build/server.js",
-    "generate-embeddings": "tsc && NODE_TLS_REJECT_UNAUTHORIZED=0 node build/scripts/generate-embeddings.js",
-    "generate-dot-env": "tsc && NODE_TLS_REJECT_UNAUTHORIZED=0 node build/scripts/generate-dot-env.js"
+    "generate-embeddings": "tsc && node build/scripts/generate-embeddings.js",
+    "generate-dot-env": "tsc && node build/scripts/generate-dot-env.js"
   },
   "license": "ISC",
   "dependencies": {
