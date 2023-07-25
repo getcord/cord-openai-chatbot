@@ -1,14 +1,21 @@
 .cord-chatbot-container {
+  background-color: #ebe9ff;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  position: relative;
+}
+
+.cord-thread-container {
+  align-items: center;
+  background-color: #ebe9ff;
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 16px;
-  background-color: #ebe9ff;
-  padding: clamp(8px, 16px, 48px);
-  width: 100%;
-  align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding: clamp(8px, 16px, 48px);
+  width: 100%;
 }
 
 cord-thread {

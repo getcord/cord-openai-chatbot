@@ -31,6 +31,63 @@ cord-presence-observer {
   display: flex;
   flex-direction: column;
   flex: 1;
-  width: 100%;
   overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* Below CSS is for highlighting cord components  */
+.highlight-cord-components {
+  box-shadow: 0px 0px 0px 5px #ffd400;
+  border-radius: 4px;
+}
+
+.inset-highlight-cord-components {
+  box-shadow: inset 0px 0px 0px 5px #ffd400;
+  padding: 5px;
+}
+
+.highlight-text,
+.highlight-text:active {
+  background: #ffd400;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 4px 8px;
+  position: absolute;
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--cord-color-base);
+}
+
+#cord-thread-label.highlight-text {
+  top: -20px;
+  left: 0;
+  margin: 0 auto;
+  right: 0;
+  text-align: center;
+  width: 120px;
+}
+
+#cord-presence-facepile-label.highlight-text {
+  bottom: -36px;
+  right: -4px;
+  z-index: 1;
+}
+
+#cord-presence-observer-label.highlight-text {
+  bottom: 10px;
+  left: 10px;
+}
+
+#cord-thread-label.hidden,
+#cord-presence-facepile-label.hidden,
+#cord-presence-observer-label.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  #cord-thread-label.highlight-text,
+  #cord-presence-facepile-label.highlight-text {
+    display: none;
+  }
 }

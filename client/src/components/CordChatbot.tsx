@@ -29,13 +29,23 @@ export function CordChatbot({ threadID }: { threadID: string }) {
   );
   return (
     <main className="cord-chatbot-container">
-      {threadID && (
-        <Thread
-          threadId={threadID}
-          onThreadInfoChange={onThreadChange}
-          style={{ minHeight: 'auto' }}
-        />
-      )}
+      <a
+        id="cord-thread-label"
+        className="highlight-text hidden"
+        href="https://docs.cord.com/components/cord-thread"
+        target="_blank"
+      >
+        Cord Thread
+      </a>
+      <div className="cord-thread-container">
+        {threadID && (
+          <Thread
+            threadId={threadID}
+            onThreadInfoChange={onThreadChange}
+            style={{ minHeight: 'auto' }}
+          />
+        )}
+      </div>
     </main>
   );
 }

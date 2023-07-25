@@ -18,7 +18,7 @@ export default async function InitializeChatbotHandler(
   const userID = uuidv4();
   const orgID = uuidv4();
   const threadID = req.body.threadID;
-  console.log('threadID', threadID);
+
   await createOrUpdateCordUser({
     userID,
     userName: USER_NAME,

@@ -10,6 +10,7 @@ const CORD_LOCATION = { page: 'cord-ai-chatbot' };
 
 function App() {
   const [cordAuthToken, setCordAuthToken] = useState<string | null>();
+  const [showHighlightComponents, setShowHighlightComponents] = useState(false);
   const threadIDRef = useRef<string>(uuidv4());
 
   useEffect(() => {
@@ -40,8 +41,20 @@ function App() {
   return (
     <CordProvider clientAuthToken={cordAuthToken}>
       <PresenceObserver location={CORD_LOCATION}>
-        <Header location={CORD_LOCATION} />
+        <Header
+          location={CORD_LOCATION}
+          showHighlightComponents={showHighlightComponents}
+          setShowHighlightComponents={setShowHighlightComponents}
+        />
         <CordChatbot threadID={threadIDRef.current} />
+        <a
+          id="cord-presence-observer-label"
+          className="highlight-text hidden"
+          href="https://docs.cord.com/components/cord-presence-observer"
+          target="_blank"
+        >
+          Cord Presence Observer
+        </a>
       </PresenceObserver>
     </CordProvider>
   );

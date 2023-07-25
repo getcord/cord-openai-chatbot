@@ -3,6 +3,7 @@ header {
   align-items: center;
   gap: 8px;
   margin: 16px;
+  position: relative;
 }
 
 header img {
@@ -10,9 +11,14 @@ header img {
   object-fit: contain;
 }
 
+.presence-facepile-container {
+  margin-left: auto;
+  position: relative;
+  height: 48px;
+}
+
 cord-presence-facepile {
   display: inline-block;
-  margin-left: auto;
 }
 
 cord-presence-facepile .cord-facepile {
@@ -25,4 +31,20 @@ cord-presence-facepile .cord-avatar-container {
 
 cord-presence-facepile .cord-avatar-fallback {
   font-size: 24px;
+}
+
+button {
+  background-color: var(--cord-color-content-primary);
+  border-radius: 4px;
+  border: 1px solid var(--cord-color-content-primary);
+  color: var(--cord-color-base-strong);
+  font-size: 16px;
+  height: 100%;
+  padding: 4px;
+  width: 160px;
+}
+
+button:hover {
+  border: 1px solid var(--cord-color-base-strong);
+  cursor: pointer;
 }
