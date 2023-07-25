@@ -8,7 +8,9 @@ type HeaderProps = {
 export function Header({ location }: HeaderProps) {
   return (
     <header>
-      <img src="/cord-logo.png" />
+      <a href="https://cord.com" target="_blank">
+        <img src="/cord-logo.png" alt="cord-logo" />
+      </a>
       <PresenceFacepile location={location} />
     </header>
   );
