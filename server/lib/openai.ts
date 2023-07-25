@@ -17,6 +17,7 @@ import { EmbeddingType } from './types';
 dotenv.config();
 
 const OPENAI_API_SECRET = process.env.OPENAI_API_SECRET as string;
+const OPENAI_API_MODEL = process.env.OPENAI_API_MODEL as string;
 
 const configuration = new Configuration({
   apiKey: OPENAI_API_SECRET,
@@ -150,7 +151,7 @@ export async function getChatBotResponse(
     console.log('Calling OpenAI: ');
     console.log('-------------------------------------');
     const r = await openai.createChatCompletion({
-      model: 'gpt-4',
+      model: OPENAI_API_MODEL,
       messages: [
         {
           role: 'user',
