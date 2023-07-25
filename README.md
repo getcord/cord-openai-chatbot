@@ -23,12 +23,15 @@ It's prebuilt with the context about Cord, the collaboration product (not the re
 
 # How does it work?
 
-Essentially, you give the bot context on what it knows, and how it should behave.
-OpenAI then does some magic, and Jackson should fill this out really.
+Essentially, you give the bot context on what it knows (its context), and you tell it how to behave,
+(it's prompt), then you give it the back-and-forths of a conversation, starting with the user's
+first message, and then use OpenAI's chat completion API to fill in the next message.
 
-- Generating embeddings
-- Prompt
-- Context/Embeddings
+This library helps you with:
+
+- Generating embeddings from a list of URLs
+- Creating a prompt for the bot
+- Selecting context data for the bot (using embeddings and cosine similarity)
 
 The client interface is using Cord's SDK to simulate a chatbot. The components from the SDK used are:
 
@@ -40,6 +43,12 @@ Server side the following is used:
 
 - [Cord webhook](https://docs.cord.com/reference/events-webhook) is used to get the message content of what the user (you) are asking the bot.
 - [Cord REST APIs](https://docs.cord.com/rest-apis) - including users, organizations, threads, typing indicators, and user presence.
+
+---
+
+## Network Diagram
+
+![Diagram of the end-to-end network traffic of messages and event between an AI chatbot and Cord's backend](./ai-cord-api-diagram.png "Diagram of the end-to-end network traffic of messages and event between an AI chatbot and Cord's backend").
 
 ---
 
