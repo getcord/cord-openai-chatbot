@@ -30,7 +30,7 @@ checkEnvVars()
 
     app.get('/', (_, res) => {
       res.status(418);
-      res.send('Im a teapot');
+      res.send("API server up and running. Bet you can't catch me!");
     });
 
     // Returns the clientAuthToken to set this on the Cord provider on the client side
