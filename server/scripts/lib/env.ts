@@ -93,7 +93,6 @@ export async function checkEnvVars() {
   ) {
     throw new Error('Update Cord user email');
   }
-  console.log('--- All variables present in env ---' + '\n\n');
 }
 
 function populateEnvWithSomeDefaultVars(missingEnvVars: DefaultEnvKeys[]) {
