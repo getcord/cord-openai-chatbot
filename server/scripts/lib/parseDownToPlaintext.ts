@@ -2,6 +2,8 @@ import { parse } from 'parse5';
 import type { ChildNode, TextNode } from 'parse5/dist/tree-adapters/default';
 import { hasOwnProperty } from './hasOwnProperty';
 
+// Set this data attribute to anything truthy in your HTML to have the scraping
+// code ignore it completely.
 const DATA_SEARCH_IGNORE = 'data-search-ignore';
 
 type AttrList = { name: string; value: string }[];
@@ -43,8 +45,18 @@ function appendTextNodes(
       continue;
     }
 
-    // Try to be a bit smart about chunking together things that are under
-    // the same heading.
+    // Try to be a bit smart about chunking together things that are under the
+    // same heading. So, if we encounter an H1 and then an H2, as long as we
+    // have space left in the chunk size, we'll keep appending them into the
+    // same chunk. However, if we've been putting together the content under an
+    // H1 tag and we encounter another H1, we'll pinch off the chunk we've been
+    // working on because the page structure indicates we've got a new topic.
+    //
+    // This works pretty well for pages that have good semantic HTML in the
+    // headings. If the pages have poor semantics in the headings, this is a
+    // dice roll. Garbage in, garbage out. In practice, that will still be okay
+    // because chunks + cosine similarity are surprisingly good at finding the
+    // right needles even when the haystack is hot garbage.
     let headingLevel = 0;
     const match = node.nodeName.match(/^h(\d)$/i);
     if (match) {
