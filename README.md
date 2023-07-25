@@ -1,6 +1,6 @@
 # Chatbot built with Cord and OpenAI
 
-This repo is a template to create an AI Chatbot using [openAI](https://openai.com/) and [Cord](https://cord.com).
+This repo is a template to create an AI Chatbot using [openAI](https://openai.com/) and [Cord](https://cord.com/?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot).
 It's prebuilt with the context about Cord, the collaboration product (not the recruiting one).
 
 ## Contents
@@ -35,14 +35,14 @@ This library helps you with:
 
 The client interface is using Cord's SDK to simulate a chatbot. The components from the SDK used are:
 
-- [Thread](https://docs.cord.com/components/cord-thread)
-- [Presence Observer](https://docs.cord.com/components/cord-presence-observer)
-- [Presence Facepile](https://docs.cord.com/components/cord-presence-facepile)
+- [Thread](https://docs.cord.com/components/cord-thread?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot)
+- [Presence Observer](https://docs.cord.com/components/cord-presence-observer?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot)
+- [Presence Facepile](https://docs.cord.com/components/cord-presence-facepile?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot)
 
 Server side the following is used:
 
-- [Cord webhook](https://docs.cord.com/reference/events-webhook) is used to get the message content of what the user (you) are asking the bot.
-- [Cord REST APIs](https://docs.cord.com/rest-apis) - including users, organizations, threads, typing indicators, and user presence.
+- [Cord webhook](https://docs.cord.com/reference/events-webhook?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot) is used to get the message content of what the user (you) are asking the bot.
+- [Cord REST APIs](https://docs.cord.com/rest-apis?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot) - including users, organizations, threads, typing indicators, and user presence.
 
 ---
 
@@ -72,7 +72,7 @@ After cloning the repo, in your Terminal:
 
 5. Enter missing information in `.env`.\
     **Cord credentais**\
-    You can find them [here](https://console.cord.com/) or [sign up](https://console.cord.com/signup) to get them.\
+    You can find them [here](https://console.cord.com/?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot) or [sign up](https://console.cord.com/signup?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot) to get them.\
     \
     **openAI credentials**\
     You can find them [here](https://platform.openai.com/account/api-keys) or sign up to get them.\
@@ -86,7 +86,7 @@ After cloning the repo, in your Terminal:
 
 **Specifying the Cord webhook endpoint**
 
-The [webhook](https://docs.cord.com/reference/events-webhook) allows you to receive events from Cord, the types of events you can see can be calibrated in the [Cord Console](https://console.cord.com).
+The [webhook](https://docs.cord.com/reference/events-webhook?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot) allows you to receive events from Cord, the types of events you can see can be calibrated in the [Cord Console](https://console.cord.com?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot).
 
 7. If you are running this locally, you will need to open up access to your localhost by using [ngrok](https://ngrok.com) or something similar.
 
@@ -98,7 +98,7 @@ The [webhook](https://docs.cord.com/reference/events-webhook) allows you to rece
    💡 Make sure your local server is turned at this point, when you insert the URL in the console, we will send a reuest to that URL and expect a status 200 back.
    ```
 
-9. Log into the [Cord Console](https://console.cord.com) and select the application you will use, then navigate to app settings, and then to the events tab and enter the webhook url (e.g `https://xxxx-217-213-73-197.ngrok-free.app/cord-webhook` from the step above).
+9. Log into the [Cord Console](https://console.cord.com?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot) and select the application you will use, then navigate to app settings, and then to the events tab and enter the webhook url (e.g `https://xxxx-217-213-73-197.ngrok-free.app/cord-webhook` from the step above).
 
    ```
    💡 Make sure your webhook url also includes the CORD_WEBHOOK_PATH value.

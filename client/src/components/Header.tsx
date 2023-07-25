@@ -56,7 +56,10 @@ export function Header({
     );
   return (
     <header>
-      <a href="https://cord.com" target="_blank">
+      <a
+        href="https://cord.com/?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot"
+        target="_blank"
+      >
         <img src="/cord-logo.png" alt="cord-logo" />
       </a>
       <button onClick={toggleHighlightCordComponents}>
@@ -69,7 +72,7 @@ export function Header({
         <a
           id="cord-presence-facepile-label"
           className="highlight-text hidden"
-          href="https://docs.cord.com/components/cord-presence-facepile"
+          href="https://docs.cord.com/components/cord-presence-facepile?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot"
           target="_blank"
         >
           Cord Presence Facepile

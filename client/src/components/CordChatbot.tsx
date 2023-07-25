@@ -32,7 +32,7 @@ export function CordChatbot({ threadID }: { threadID: string }) {
       <a
         id="cord-thread-label"
         className="highlight-text hidden"
-        href="https://docs.cord.com/components/cord-thread"
+        href="https://docs.cord.com/components/cord-thread?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot"
         target="_blank"
       >
         Cord Thread

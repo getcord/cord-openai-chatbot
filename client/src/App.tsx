@@ -50,7 +50,7 @@ function App() {
         <a
           id="cord-presence-observer-label"
           className="highlight-text hidden"
-          href="https://docs.cord.com/components/cord-presence-observer"
+          href="https://docs.cord.com/components/cord-presence-observer?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot"
           target="_blank"
         >
           Cord Presence Observer
