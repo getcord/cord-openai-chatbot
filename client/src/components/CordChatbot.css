@@ -1,4 +1,4 @@
-.cord-chatbot-container {
+.chatbot-container {
   background-color: #ebe9ff;
   display: flex;
   flex-direction: column;
@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.cord-thread-container {
+.thread-container {
   align-items: center;
   background-color: #ebe9ff;
   display: flex;

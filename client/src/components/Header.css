@@ -33,7 +33,7 @@ cord-presence-facepile .cord-avatar-fallback {
   font-size: 24px;
 }
 
-button {
+.toggleHighlightButton {
   background-color: var(--cord-color-content-primary);
   border-radius: 4px;
   border: 1px solid var(--cord-color-content-primary);
@@ -44,7 +44,7 @@ button {
   width: 160px;
 }
 
-button:hover {
+.toggleHighlightButton:hover {
   border: 1px solid var(--cord-color-base-strong);
   cursor: pointer;
 }

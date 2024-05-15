@@ -28,7 +28,7 @@ export function CordChatbot({ threadID }: { threadID: string }) {
     [threadID],
   );
   return (
-    <main className="cord-chatbot-container">
+    <main className="chatbot-container">
       <a
         id="cord-thread-label"
         className="highlight-text hidden"
@@ -37,7 +37,7 @@ export function CordChatbot({ threadID }: { threadID: string }) {
       >
         Cord Thread
       </a>
-      <div className="cord-thread-container">
+      <div className="thread-container">
         {threadID && (
           <Thread
             threadId={threadID}

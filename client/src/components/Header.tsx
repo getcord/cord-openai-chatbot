@@ -62,7 +62,10 @@ export function Header({
       >
         <img src="/cord-logo.png" alt="cord-logo" />
       </a>
-      <button onClick={toggleHighlightCordComponents}>
+      <button
+        className="toggleHighlightButton"
+        onClick={toggleHighlightCordComponents}
+      >
         {showHighlightComponents
           ? 'Turn off highlight'
           : 'Highlight Cord Components'}
