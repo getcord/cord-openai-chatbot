@@ -12,6 +12,7 @@ function App() {
   const [cordAuthToken, setCordAuthToken] = useState<string | null>();
   const [showHighlightComponents, setShowHighlightComponents] = useState(false);
   const threadIDRef = useRef<string>(uuidv4());
+  const initStarted = useRef<boolean>(false);
 
   useEffect(() => {
     async function initializeCord() {
@@ -35,6 +36,11 @@ function App() {
         console.log('Something went wrong with initializing Cord: ', error);
       }
     }
+
+    if (initStarted.current) {
+      return;
+    }
+    initStarted.current = true;
     initializeCord();
   }, []);
 
