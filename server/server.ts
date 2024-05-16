@@ -4,7 +4,6 @@ import * as dotenv from 'dotenv';
 import * as cors from 'cors';
 
 import InitializeCordChatbotHandler from './routes/InitializeChatbotHandler';
-import SendFirstMessageHandler from './routes/SendFirstMessageHandler';
 import CordWebhookEventsHandler from './routes/CordWebhookEventsHandler';
 import { checkEnvVars } from './scripts/lib/env';
 
@@ -35,9 +34,6 @@ checkEnvVars()
 
     // Returns the clientAuthToken to set this on the Cord provider on the client side
     app.post('/initialize-chatbot', InitializeCordChatbotHandler);
-
-    // The bot will send the first message to the user if there are no messages.
-    app.post('/send-first-message', SendFirstMessageHandler);
 
     // All the cord web events get sent to here
     app.post(CORD_WEBHOOK_PATH, CordWebhookEventsHandler);

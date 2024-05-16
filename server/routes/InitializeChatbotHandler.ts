@@ -1,15 +1,16 @@
 import type { Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
-import { BOT_PRESENCE_LOCATION, BOT_USER_ID, BOT_USER_NAME } from '../lib/bot';
+import { MessageNodeType } from '@cord-sdk/types';
+import { BOT_FIRST_MESSAGE, BOT_PRESENCE_LOCATION, BOT_USER_ID, BOT_USER_NAME } from '../lib/bot';
 import {
   USER_NAME,
   createOrUpdateCordOrgWithUsers,
   createOrUpdateCordUser,
   getCordClientAuthToken,
+  sendMessageToCord,
   setUserPresence,
 } from '../lib/cord';
 import { HOST, PORT } from '../server';
-import { threadOrgCache } from '../lib/cache';
 
 export default async function InitializeChatbotHandler(
   req: Request,
@@ -24,11 +25,6 @@ export default async function InitializeChatbotHandler(
     userName: USER_NAME,
     profilePictureURL: `${HOST}:${PORT}/user-avatar.png`,
   });
-  await createOrUpdateCordUser({
-    userID: BOT_USER_ID,
-    userName: BOT_USER_NAME,
-    profilePictureURL: `${HOST}:${PORT}/cordy-avatar.png`,
-  });
   await createOrUpdateCordOrgWithUsers({
     userIDs: [userID, BOT_USER_ID],
     orgID,
@@ -36,9 +32,25 @@ export default async function InitializeChatbotHandler(
 
   // Want to show the bot as present before it sends a message
   await setUserPresence(BOT_PRESENCE_LOCATION, orgID, false, BOT_USER_ID);
-
-  // Store threadID and orgID realation
-  threadOrgCache[threadID] = orgID;
+  const url = `${HOST}:${PORT}`;
+  setTimeout(async () => {
+    await sendMessageToCord({
+      userID,
+      threadID,
+      messageContent: [{
+        type: MessageNodeType.PARAGRAPH,
+        children: [{
+          text: BOT_FIRST_MESSAGE,
+        }],
+      }],
+      createThread: {
+        name: 'Cord and OpenAI Chatbot',
+        groupID: orgID,
+        location: { url },
+        url,
+      }
+    });
+  }, 1000);
 
   const user = {
     user_id: userID,

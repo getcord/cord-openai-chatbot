@@ -5,6 +5,8 @@ import {
   getClientAuthToken,
   getServerAuthToken,
 } from '@cord-sdk/server';
+import type { MessageContent } from '@cord-sdk/types';
+import { CreateMessageVariables } from '@cord-sdk/api-types';
 import { BOT_USER_ID } from './bot';
 
 dotenv.config();
@@ -131,10 +133,12 @@ export async function sendMessageToCord({
   userID,
   threadID,
   messageContent,
+  createThread,
 }: {
   userID: string;
   threadID: string;
-  messageContent: object[];
+  messageContent: MessageContent;
+  createThread?: CreateMessageVariables['createThread'];
 }) {
   try {
     const token = await getCordServerAuthToken();
@@ -145,6 +149,7 @@ export async function sendMessageToCord({
           'msg-' + Date.now() + '-' + (userID === BOT_USER_ID ? 'bot' : 'user'),
         authorID: userID,
         content: messageContent,
+        createThread,
       },
       {
         headers: {
@@ -156,32 +161,6 @@ export async function sendMessageToCord({
       throw new Error('Response not 200');
     }
   } catch (error) {
-    console.log('setUserPresence', error);
-  }
-}
-
-/**
- * Adds users to the typing indicator of a thread
- * https://docs.cord.com/rest-apis/threads
- */
-export async function updateTypingIndicator(
-  threadID: string,
-  userIDs: string[],
-  typing: boolean,
-) {
-  try {
-    const token = await getCordServerAuthToken();
-
-    await axios.put(
-      `${CORD_SERVER}/v1/threads/${encodeURIComponent(threadID)}`,
-      { typing: typing ? userIDs : [] },
-      {
-        headers: {
-          Authorization: 'Bearer ' + token,
-        },
-      },
-    );
-  } catch (error) {
-    console.log('updateTypingIndicator', error);
+    console.log('sendMessageToCord', error);
   }
 }

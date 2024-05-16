@@ -1,4 +1,4 @@
-import { cosineSimilarity } from './openai';
+import { cosineSimilarity } from './bot';
 import { EmbeddingType } from './types';
 
 export type EmbeddingScore = {
