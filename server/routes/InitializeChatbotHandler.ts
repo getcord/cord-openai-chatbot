@@ -35,7 +35,7 @@ export default async function InitializeChatbotHandler(
   const url = `${HOST}:${PORT}`;
   setTimeout(async () => {
     await sendMessageToCord({
-      userID,
+      userID: BOT_USER_ID,
       threadID,
       messageContent: [{
         type: MessageNodeType.PARAGRAPH,
