@@ -1,6 +1,6 @@
 # Chatbot built with Cord and OpenAI
 
-This repo is a template to create an AI Chatbot using [openAI](https://openai.com/) and [Cord](https://cord.com/?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot).
+This repo is a template to create an AI Chatbot using [OpenAI](https://openai.com/) and [Cord](https://cord.com/?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot)'s [chatbot SDK](https://docs.cord.com/chatbot-ai-sdk/getting-started?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot).
 It's prebuilt with the context about Cord, the collaboration product (not the recruiting one).
 
 ## Contents
@@ -41,6 +41,7 @@ The client interface is using Cord's SDK to simulate a chatbot. The components f
 
 Server side the following is used:
 
+- [Cord chatbot SDK](https://docs.cord.com/chatbot-ai-sdk/getting-started?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot) is used to manage responding to webhooks, talking to the OpenAI API, converting between Cord and OpenAI's message formats, etc.
 - [Cord webhook](https://docs.cord.com/reference/events-webhook?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot) is used to get the message content of what the user (you) are asking the bot.
 - [Cord REST APIs](https://docs.cord.com/rest-apis?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot) - including users, organizations, threads, typing indicators, and user presence.
 
