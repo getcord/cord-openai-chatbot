@@ -24,7 +24,7 @@ It's prebuilt with the context about Cord, the collaboration product (not the re
 # How does it work?
 
 Essentially, you give the bot context on what it knows (its context), and you tell it how to behave,
-(it's prompt), then you give it the back-and-forths of a conversation, starting with the user's
+(its prompt), then you give it the back-and-forths of a conversation, starting with the user's
 first message, and then use OpenAI's chat completion API to fill in the next message.
 
 This library helps you with:
@@ -41,8 +41,7 @@ The client interface is using Cord's SDK to simulate a chatbot. The components f
 
 Server side the following is used:
 
-- [Cord chatbot SDK](https://docs.cord.com/chatbot-ai-sdk/getting-started?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot) is used to manage responding to webhooks, talking to the OpenAI API, converting between Cord and OpenAI's message formats, etc.
-- [Cord webhook](https://docs.cord.com/reference/events-webhook?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot) is used to get the message content of what the user (you) are asking the bot.
+- [Cord's chatbot SDK](https://docs.cord.com/chatbot-ai-sdk/getting-started?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot) is used to manage responding to webhooks, talking to the OpenAI API, converting between Cord and OpenAI's message formats, etc.
 - [Cord REST APIs](https://docs.cord.com/rest-apis?utm_source=GitHub&utm_medium=referral&utm_campaign=ai_chatbot) - including users, organizations, threads, typing indicators, and user presence.
 
 ---
