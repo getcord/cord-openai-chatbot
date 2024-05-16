@@ -43,38 +43,37 @@ async function getChunkedSitePages(
   urls: string[],
 ): Promise<{ url: string; title: string; plaintext: string }[]> {
   const chunks: { url: string; title: string; plaintext: string }[] = [];
-  const promises: Promise<void>[] = [];
 
-  for (const url of urls) {
-    promises.push(
-      new Promise(async (res) => {
-        let txt = '';
-        try {
-          const pageResponse = await axios.get(url);
-          txt = await pageResponse.data;
-          const plaintexts = parseDownToPlaintextStrings(txt);
-          let title = getTitleByFuglyRegex(txt) || 'Cord.com';
-          if (title.includes('Cord | Make the internet multiplayer | ')) {
-            title = title.replace(
-              'Cord | Make the internet multiplayer | ',
-              '',
-            );
-          }
-          for (const plaintext of plaintexts) {
-            chunks.push({
-              url,
-              title,
-              plaintext,
-            });
-          }
-          res();
-        } catch (error) {
-          console.log('page fetch failed', error);
-        }
-      }),
-    );
+  async function fetchUrl(url: string) {
+    if (url.length === 0) {
+      return;
+    }
+
+    let txt = '';
+    try {
+      const pageResponse = await axios.get(url);
+      txt = await pageResponse.data;
+      const plaintexts = parseDownToPlaintextStrings(txt);
+      let title = getTitleByFuglyRegex(txt) || 'Cord.com';
+      if (title.includes('Cord | Make the internet multiplayer | ')) {
+        title = title.replace(
+          'Cord | Make the internet multiplayer | ',
+          '',
+        );
+      }
+      for (const plaintext of plaintexts) {
+        chunks.push({
+          url,
+          title,
+          plaintext,
+        });
+      }
+    } catch (error) {
+      console.log('page fetch failed', url, error);
+    }
   }
-  await Promise.all(promises);
+
+  await Promise.all(urls.map(fetchUrl));
   return chunks;
 }
 
